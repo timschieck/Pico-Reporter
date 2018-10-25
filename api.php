@@ -1,6 +1,8 @@
 <?
 require("api_details.php");
 
+
+// This is the core function that queries out the PCO API and returns an object. Every other function depends on this one. Use it wisely.
 function pco_api_get($query) {
   $pco_api = curl_init();
   curl_setopt($pco_api, CURLOPT_URL, $query);
@@ -23,11 +25,10 @@ function pco_build_query($query, $module, $params = null) {
 
 function pco_people($query, $params = null) {
   $api_query = pco_build_query($query, "people", $params);
-
   $api_return = pco_api_get($api_query);
 
+//The following portion of code checks to see how many total records the query has returned and will continue querying planning center until all records have been loaded into the data-> portion of the object.
   $total_record_count = $api_return->meta->total_count;
-
   $loaded_record_count = count($api_return->data);
 
   if ($loaded_record_count < $total_record_count) {
@@ -49,8 +50,6 @@ function pco_people($query, $params = null) {
     if ($loaded_record_count < $total_record_count) {
       $next_page_link = $api_next_page->links->next;
     }
-
-
   }
   return $api_return;
 }
