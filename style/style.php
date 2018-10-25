@@ -27,9 +27,15 @@ function FooterStyle() {
     </html>
 <? }
 
-function Tabler($array) {
-  if (!isarray($array)) {
-    return "Tabler requires an array input";
+function Lister($array = null) {
+  if (isset($array) && isarray($array)) {
+    echo "<ol>";
+    foreach ($array as $element) {
+      echo "<li>$array</li>";
+    }
+    echo "</ol>";
   }
-  return "Thank you for the array";
+  return "Lister requires an array input";
 }
+
+// echo Lister();
