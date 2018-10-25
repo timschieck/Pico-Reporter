@@ -37,5 +37,3 @@ function Lister($array = null) {
   }
   return "Lister requires an array input";
 }
-
-// echo Lister();
