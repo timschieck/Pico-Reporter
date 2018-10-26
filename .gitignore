@@ -1,7 +1,9 @@
 .ftpconfig
-db/db.sqlite3
+db/
 /php
 api_details.php
 userauth.php
 login.php
 error_log
+shepherding-list.php
+playground.php
