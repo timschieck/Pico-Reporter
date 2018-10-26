@@ -4,7 +4,7 @@ function HeaderStyle($title = null) {
   <!DOCTYPE html lang="en">
   <html>
   <head>
-    <title><?php echo $title ?></title>
+    <title><?php echo $title ?> - Pico Reporter</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display">
