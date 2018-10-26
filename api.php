@@ -1,5 +1,9 @@
 <?
 require("api_details.php");
+require("utility/config.php");
+require("utility/functions.php");
+
+Authentication();
 
 
 // This is the core function that queries out the PCO API and returns an object. Every other function depends on this one. Use it wisely.
