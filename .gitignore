@@ -2,3 +2,6 @@
 db/db.sqlite3
 /php
 api_details.php
+userauth.php
+login.php
+error_log
