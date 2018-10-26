@@ -18,7 +18,7 @@ function HeaderStyle($title = null) {
       <?php
       NavBar();
     }
-    
+
     function FooterStyle() {
       ?>
     </div>
@@ -41,6 +41,20 @@ function Lister($array = null) {
 }
 
 function NavBar() {
+  function NavItems($array) {
+    function NavItem($name, $url = null) {
+      if($url == basename($_SERVER["SCRIPT_FILENAME"])) {
+        echo "<li class='nav-item active'>";
+      } else {
+        echo "<li class='nav-item'>";
+      }
+      echo "<a class='nav-link' href='$url'>$name</a>";
+      echo "</li>";
+    }
+    foreach ($array as $name => $url) {
+      NavItem($name, $url);
+    }
+  }
   $menu_items =array(
     "Home"    => "index.php",
     "Lists"   => "lists.php",
@@ -65,18 +79,4 @@ function NavBar() {
     </div>
   </div>
   <?
-  function NavItems($array) {
-    function NavItem($name, $url = null) {
-      if($url == basename($_SERVER["SCRIPT_FILENAME"])) {
-        echo "<li class='nav-item active'>";
-      } else {
-        echo "<li class='nav-item'>";
-      }
-      echo "<a class='nav-link' href='$url'>$name</a>";
-      echo "</li>";
-    }
-    foreach ($array as $name => $url) {
-      NavItem($name, $url);
-    }
-  }
 }
