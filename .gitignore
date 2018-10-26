@@ -1,4 +1,4 @@
 .ftpconfig
-/db
+db/db.sqlite3
 /php
 api_details.php
